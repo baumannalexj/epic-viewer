@@ -94,6 +94,7 @@ class EpicViewApp(App):
 
     def on_data_table_cell_highlighted(self, event: DataTable.CellHighlighted) -> None:
         table = self.query_one(DataTable)
+        table.scroll_x = 0 # snap left, prevents right scroll on row selection
         highlighted_row_key = event.cell_key.row_key.value
         highlighted_column_key = event.cell_key.column_key.value
 
