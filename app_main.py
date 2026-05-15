@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 
-from app_view.epicviewer import EpicViewApp
+from app.epicviewer import EpicViewApp
 from clients.atlassian_cli import AtlassianClient
 from config import Config
 from core.services.table_service import TableService

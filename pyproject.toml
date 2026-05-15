@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "epicviewer"
+name = "epicview"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = ["textual>=0.50"]
 
 [project.scripts]
-epicviewer = "app_main:main"
+epicview = "app_main:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["app_main.py", "app_view", "clients", "core", "config.py"]
+packages = ["app_main.py", "app", "clients", "core", "config.py", "repository"]
