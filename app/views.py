@@ -58,11 +58,11 @@ class TableRowView:
         return f"[blue underline]{self.issue_cell}[/blue underline]"
 
     @classmethod
-    def from_issues(cls, issues: list[IssueModel], config: Config) -> list['TableRowView']:
+    def from_issues(cls, issues: list[IssueModel], config: Config) -> list["TableRowView"]:
         return [cls.from_issue(issue, config) for issue in issues]
 
     @classmethod
-    def from_issue(cls, issue: IssueModel, config: Config) -> 'TableRowView':
+    def from_issue(cls, issue: IssueModel, config: Config) -> "TableRowView":
         summary = issue.summary
         if len(summary) > config.ISSUE_SUMMARY_MAX:
             summary = summary[:config.ISSUE_SUMMARY_MAX - 3] + "..."

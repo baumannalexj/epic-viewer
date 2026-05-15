@@ -2,9 +2,9 @@ from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.widgets import DataTable, Footer, RichLog
 
-from app_view.app_logger import attach_log_handler, create_log_widget
-from app_view.cell_handlers import CellHandlerFactory
-from app_view.views import ColumnType, TableRowView
+from app.app_logger import attach_log_handler, create_log_widget
+from app.cell_handlers import CellHandlerFactory
+from app.views import ColumnType, TableRowView
 from config import Config
 from core.errors import IssueNotFoundError
 from core.models.issue_model import IssueModel
@@ -77,7 +77,7 @@ class EpicViewApp(App):
         table = self.query_one(DataTable)
         table.clear()
         try:
-            issues: list[IssueModel] = self._table_service.get_parent_and_issues(self._issue_parent)
+            issues: list[IssueModel] = self._table_service.initial_load_parent_and_issues(self._issue_parent)
         except IssueNotFoundError as e:
             new_key = input(f"Issue {e.key} not found. Enter a new key: ").strip().upper()
             self._issue_parent = new_key

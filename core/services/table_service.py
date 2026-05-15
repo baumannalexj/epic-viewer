@@ -8,8 +8,7 @@ class TableService:
         self._client = client
         self._repo = repo
 
-    # todo claude - rename this as initial_load_parent_and_issues
-    def get_parent_and_issues(self, parent_key: str) -> list[IssueModel]:
+    def initial_load_parent_and_issues(self, parent_key: str) -> list[IssueModel]:
         parent = self._client.fetch_parent(parent_key)
         children = self._client.fetch_children(parent_key)
         issues = [parent] + children
