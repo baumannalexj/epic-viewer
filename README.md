@@ -1,4 +1,4 @@
-# epicviewer
+# epicview
 
 Interactive Jira epic dashboard for a tmux pane.
 
@@ -27,18 +27,18 @@ blocked      [↓] | PRJCT-235 handle crashes
 ## Running
 
 ```bash
-git@github.com:baumannalexj/epic-viewer.git
+git@github.com:baumannalexj/epic-view.git
 cd epic-view
-uv run epicviewer PRJCT-123
+uv run epicview PRJCT-123
 ```
 
 Or add to your path to run anywhere
 
 ```bash
 cd epic-view
-uv tool install
+uv tool install .
 cd somewhere/else
-epicviewr
+epicview
 ```
 
 
